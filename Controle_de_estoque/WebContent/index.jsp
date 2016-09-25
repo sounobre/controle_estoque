@@ -1,2 +1,2 @@
-<jsp:forward page="template/template.jsf" />
+<jsp:forward page="pages/principal.jsf" />
 

@@ -27,9 +27,11 @@
 				<p:growl autoUpdate="true" />
 
 				<p:panelMenu style="width:300px">
-					<p:submenu label="Ajax Menuitems">
-						<p:menuitem value="Save" icon="ui-icon-disk" />
-						<p:menuitem value="Update" icon="ui-icon-arrowrefresh-1-w" />
+					<p:submenu label="Cadastro">
+						<p:menuitem value="Funcionários"  />
+						<p:menuitem value="Materiais"  />
+						<p:menuitem value="serviços"  />
+						<p:menuitem value="Clientes"  />
 					</p:submenu>
 				</p:panelMenu>
 			</h:form>
@@ -40,8 +42,10 @@
 			<h:outputText value="Right unit content." />
 		</p:layoutUnit>
 
-		<p:layoutUnit position="center">
-        //page code
+		<p:layoutUnit  position="center">
+        
+        <ui:insert name="conteudo"/>
+        
     </p:layoutUnit>
 
 	</p:layout>
