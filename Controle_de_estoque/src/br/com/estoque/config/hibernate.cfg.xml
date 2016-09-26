@@ -20,8 +20,6 @@ name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<mapping class="model.Categoria"/>
-		<mapping class="model.Produto"/>
 		
 	</session-factory>
 	
