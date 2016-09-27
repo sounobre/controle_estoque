@@ -1,17 +1,37 @@
 package br.com.estoque.model;
 
+
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Produto {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column
 	private Integer id;
+	@Column
 	private String nome;
+	@Column
 	private Double preco;
+	@Column
 	private String fornecedor;
-	public Produto(Integer id, String nome, Double preco, String fornecedor) {
+	@Column
+	private String categoria;
+	
+	public Produto(Integer id, String nome, Double preco, String fornecedor, String categoria) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.preco = preco;
 		this.fornecedor = fornecedor;
+		this.categoria = categoria;
 	}
 	public Produto() {
 		super();
@@ -39,6 +59,13 @@ public class Produto {
 	}
 	public void setFornecedor(String fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+	
+	public String getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 	
 	
