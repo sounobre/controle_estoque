@@ -1,26 +1,21 @@
 package manager;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+
 import java.util.List;
 
-import javax.faces.application.Application;
+
 import javax.faces.application.FacesMessage;
-import javax.faces.application.FacesMessage.Severity;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIViewRoot;
-import javax.faces.context.ExternalContext;
+
 import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseStream;
-import javax.faces.context.ResponseWriter;
-import javax.faces.model.SelectItem;
-import javax.faces.render.RenderKit;
+
 
 import br.com.estoque.model.Produto;
 import br.com.estoque.persistence.ProdutoDao;
 
-@ManagedBean
+@ManagedBean(name="pBean")
 @RequestScoped
 public class ProdutoBean {
 	private Produto produto;

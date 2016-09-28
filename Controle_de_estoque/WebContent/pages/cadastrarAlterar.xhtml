@@ -7,12 +7,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 	
-	<h:head>
-	
-	<h:outputStylesheet name="resources/css/style.css"/>
-	
-	</h:head>
-	
+		
 	
 	<ui:composition template= "template.xhtml">
 	
@@ -20,8 +15,29 @@
 
   
 	
-	<ui:define name="conteudo">
-	    Página de cadastro
+	<ui:define name="conteudo" >
+	    
+
+				
+			<h:form id="formproduto" >
+				<h:panelGrid columns="2">
+					<h:outputText value="Nome: " />
+					<p:inputText  />
+					
+					<h:outputText value="Preço: " />
+					<p:spinner  />
+					
+					<h:outputText value="Fornecedor: " />
+					<p:inputText  />
+					
+					<h:outputText value="Categoria: " />
+					<p:inputText  />
+					
+				</h:panelGrid>
+				<p:commandButton value="CADASTRAR" ></p:commandButton>
+				<p:messages />
+			</h:form>
+		
 	    
 	    
 	    
