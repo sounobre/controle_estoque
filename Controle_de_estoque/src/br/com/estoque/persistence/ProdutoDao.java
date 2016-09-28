@@ -15,10 +15,10 @@ public class ProdutoDao {
 	Transaction transaction;
 	Query query;
 	
-	public void cadastrar(Produto p)throws Exception {
+	public void cadastrar(Produto produto)throws Exception {
 		session = HibernateUtil.getSessionFactory().openSession();
 		transaction = session.beginTransaction();
-		session.save(p);
+		session.save(produto);
 		transaction.commit();
 		session.close();
 		

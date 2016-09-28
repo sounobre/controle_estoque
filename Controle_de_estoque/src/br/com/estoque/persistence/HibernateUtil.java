@@ -14,7 +14,7 @@ public class HibernateUtil {
 			if (sessionFactory == null) {
 				Configuration configuration = new Configuration()
 						.configure(HibernateUtil.class
-								.getResource("/br.com.estoque.config/hibernate.cfg.xml"));
+								.getResource("/config/hibernate.cfg.xml"));
 				ServiceRegistryBuilder serviceRegistryBuilder = new ServiceRegistryBuilder();
 				serviceRegistryBuilder.applySettings(configuration
 						.getProperties());

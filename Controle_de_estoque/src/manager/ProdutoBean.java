@@ -61,6 +61,7 @@ public class ProdutoBean {
 				
 			}catch(Exception e){
 				e.printStackTrace();
+				fc.addMessage("formproduto", new FacesMessage(produto.getNome() + "Não cadastrado"));
 			}
 			
 			return null;		

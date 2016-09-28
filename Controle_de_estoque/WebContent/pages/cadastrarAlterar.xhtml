@@ -22,19 +22,19 @@
 			<h:form id="formproduto" >
 				<h:panelGrid columns="2">
 					<h:outputText value="Nome: " />
-					<p:inputText  />
+					<p:inputText value="#{pBean.produto.nome}"  />
 					
 					<h:outputText value="Preço: " />
-					<p:spinner  />
+					<p:spinner value="#{pBean.produto.preco}" />
 					
 					<h:outputText value="Fornecedor: " />
-					<p:inputText  />
+					<p:inputText value="#{pBean.produto.fornecedor}" />
 					
 					<h:outputText value="Categoria: " />
-					<p:inputText  />
+					<p:inputText value="#{pBean.produto.categoria}"  />
 					
 				</h:panelGrid>
-				<p:commandButton value="CADASTRAR" ></p:commandButton>
+				<p:commandButton value="CADASTRAR" action="#{pBean.cadastrar}" update="formproduto"></p:commandButton>
 				<p:messages />
 			</h:form>
 		
