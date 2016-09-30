@@ -1,6 +1,7 @@
 package manager;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -67,6 +68,8 @@ public class ProdutoBean {
 			return null;		
 		
 	}
+	
+	
 	
 	
 	

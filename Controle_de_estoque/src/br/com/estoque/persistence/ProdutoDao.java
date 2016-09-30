@@ -26,8 +26,8 @@ public class ProdutoDao {
 	
 	public List<Produto> listar()throws Exception {
 			session = HibernateUtil.getSessionFactory().openSession();
-			List<Produto> lista = new ArrayList<Produto>();
-			query = session.createQuery("from produto");
+			query = session.createQuery("select p from produto p order by p.id");
+			List<Produto> lista = query.list();
 			session.close();
 		
 		return lista;
