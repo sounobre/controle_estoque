@@ -15,14 +15,14 @@
 
   
 	
-	<ui:define name="conteudo" >
+	<ui:define name="conteudo">
 	    
 
 				
-			<h:form id="formproduto" >
-				<h:panelGrid columns="2">
-					<h:outputText value="Nome: " />
-					<p:inputText value="#{pBean.produto.nome}"  />
+			<h:form id="formproduto">
+				<h:panelGrid columns="2" >
+					<h:outputText  value="Nome: " />
+					<p:inputText value="#{pBean.produto.nome}"  style="inputtext"/>
 					
 					<h:outputText value="Preço: " />
 					<p:spinner value="#{pBean.produto.preco}" />

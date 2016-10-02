@@ -1,3 +1,18 @@
 .ui-widget, .ui-widget .ui-widget {
 font-size: 90% !important;
 }
+
+ .ui-panelgrid, .ui-inputfield, .text-input {
+font-size: 50% !important;
+}
+
+.customTxtWidth150px, .ui-inputtext {
+ width: 50% !important;
+ height: 10px !important;
+}
+
+.panelGrid {
+font-size: 5px !important
+}
+
+
