@@ -12,6 +12,8 @@ import javax.faces.bean.RequestScoped;
 
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.CellEditEvent;
+import org.primefaces.event.RowEditEvent;
 
 import br.com.estoque.model.Produto;
 import br.com.estoque.persistence.ProdutoDao;
@@ -68,6 +70,27 @@ public class ProdutoBean {
 			return null;		
 		
 	}
+	
+	
+	 public void onRowEdit(RowEditEvent event) {
+	        FacesMessage msg = new FacesMessage("Car Edited");
+	        FacesContext.getCurrentInstance().addMessage(null, msg);
+	    }
+	     
+	    public void onRowCancel(RowEditEvent event) {
+	        FacesMessage msg = new FacesMessage("Edit Cancelled");
+	        FacesContext.getCurrentInstance().addMessage(null, msg);
+	    }
+	     
+	    public void onCellEdit(CellEditEvent event) {
+	        Object oldValue = event.getOldValue();
+	        Object newValue = event.getNewValue();
+	         
+	        if(newValue != null && !newValue.equals(oldValue)) {
+	            FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cell Changed", "Old: " + oldValue + ", New:" + newValue);
+	            FacesContext.getCurrentInstance().addMessage(null, msg);
+	        }
+	    }
 	
 	
 	

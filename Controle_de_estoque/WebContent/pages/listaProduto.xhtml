@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+		
+	
+	<ui:composition template= "template.xhtml">
+	
+	
+
+  
+	
+	<ui:define name="conteudo" >
+	    
+	<h:form id="formListaProduto">
+			
+		<!--  	<p:dataTable value="#{pBean.listaproduto}" var="prod">
+				<p:column headerText="Nome">
+					<h:outputText value="#{prod.nome}"/>				
+				</p:column> 
+				<p:column headerText="Preço">
+					<h:outputText value="#{prod.preco}"/>				
+				</p:column> 
+				<p:column headerText="Fornecedor">
+					<h:outputText value="#{prod.fornecedor}"/>				
+				</p:column> 
+				<p:column headerText="Categoria">
+					<h:outputText value="#{prod.categoria}"/>				
+				</p:column> 
+				<p:commandButton value="Editar"></p:commandButton>
+				<p:commandButton value="Excluir"></p:commandButton>
+
+			
+			</p:dataTable>
+			<p:commandButton value="Editar"></p:commandButton>
+				<p:commandButton value="Excluir"></p:commandButton>
+				
+				-->
+				<p:separator></p:separator>
+				
+				
+				<p:growl id="msgs" showDetail="true"/>
+ 
+   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px">
+       <f:facet name="header">
+           Row Editing
+       </f:facet>
+ 
+       <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update=":form:msgs" />
+       <p:ajax event="rowEditCancel" listener="#{pBean.onRowCancel}" update=":form:msgs" />
+ 
+       <p:column headerText="Nome">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{prod.nome}"/></f:facet>
+               <f:facet name="input"><p:inputText  value="#{prod.nome}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+ 
+       
+           
+ <!--  
+       <p:column style="width:32px">
+           <p:rowEditor />
+       </p:column> -->
+   </p:dataTable>
+		
+			</h:form>
+	    
+	    
+	    
+	</ui:define>
+	
+</ui:composition>
+
+</html>
