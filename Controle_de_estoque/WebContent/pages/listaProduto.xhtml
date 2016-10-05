@@ -18,7 +18,7 @@
 	
 	<ui:define name="conteudo" >
 	    
-	<h:form id="formListaProduto">
+	<h:form id="form">
 			
 		<!--  	<p:dataTable value="#{pBean.listaproduto}" var="prod">
 				<p:column headerText="Nome">
@@ -48,26 +48,45 @@
 				<p:growl id="msgs" showDetail="true"/>
  
    <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px">
-       <f:facet name="header">
-           Row Editing
-       </f:facet>
+       
  
        <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update=":form:msgs" />
        <p:ajax event="rowEditCancel" listener="#{pBean.onRowCancel}" update=":form:msgs" />
  
+       <p:column headerText="Id">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{prod.id}"/></f:facet>
+               <f:facet name="input"><p:inputText  value="#{prod.id}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
        <p:column headerText="Nome">
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{prod.nome}"/></f:facet>
                <f:facet name="input"><p:inputText  value="#{prod.nome}" style="width:100%"/></f:facet>
            </p:cellEditor>
        </p:column>
+       <p:column headerText="Preço">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{prod.preco}"/></f:facet>
+               <f:facet name="input"><p:inputText  value="#{prod.preco}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+       <p:column headerText="Fornecedor">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{prod.fornecedor}"/></f:facet>
+               <f:facet name="input"><p:inputText  value="#{prod.fornecedor}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
+       <p:column headerText="Categoria">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{prod.categoria}"/></f:facet>
+               <f:facet name="input"><p:inputText  value="#{prod.categoria}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+       </p:column>
  
-       
-           
- <!--  
        <p:column style="width:32px">
            <p:rowEditor />
-       </p:column> -->
+       </p:column> 
    </p:dataTable>
 		
 			</h:form>

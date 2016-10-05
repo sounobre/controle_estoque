@@ -73,7 +73,7 @@ public class ProdutoBean {
 	
 	
 	 public void onRowEdit(RowEditEvent event) {
-	        FacesMessage msg = new FacesMessage("Car Edited");
+	        FacesMessage msg = new FacesMessage("Car Edited", ((Produto) event.getObject()).getNome());
 	        FacesContext.getCurrentInstance().addMessage(null, msg);
 	    }
 	     
