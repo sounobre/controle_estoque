@@ -1,16 +1,17 @@
 package manager;
 
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 
 import javax.faces.application.FacesMessage;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+
 
 import org.primefaces.event.CellEditEvent;
 import org.primefaces.event.RowEditEvent;
@@ -19,7 +20,7 @@ import br.com.estoque.model.Produto;
 import br.com.estoque.persistence.ProdutoDao;
 
 @ManagedBean(name="pBean")
-@RequestScoped
+@ViewScoped
 public class ProdutoBean {
 	private Produto produto;
 	private List<Produto> listaproduto;
@@ -33,6 +34,8 @@ public class ProdutoBean {
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
+	
+	
 	public List<Produto> getListaproduto() {
 		try{
 			
@@ -73,11 +76,20 @@ public class ProdutoBean {
 	
 	
 	 public void onRowEdit(RowEditEvent event) {
-	        FacesMessage msg = new FacesMessage("Car Edited", ((Produto) event.getObject()).getNome());
-	        FacesContext.getCurrentInstance().addMessage(null, msg);
-	    }
+		 Produto produto = ((Produto) event.getObject());
+		 new ProdutoDao().editar(produto);
+	 }
+		 
+	
+
+
+		 
+		 
+	    
+	    
 	     
-	    public void onRowCancel(RowEditEvent event) {
+	   
+		public void onRowCancel(RowEditEvent event) {
 	        FacesMessage msg = new FacesMessage("Edit Cancelled");
 	        FacesContext.getCurrentInstance().addMessage(null, msg);
 	    }

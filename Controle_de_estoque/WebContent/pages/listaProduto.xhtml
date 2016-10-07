@@ -47,17 +47,16 @@
 				
 				<p:growl id="msgs" showDetail="true"/>
  
-   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px">
+   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px" id="dtable">
        
  
-       <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update=":form:msgs" />
-       <p:ajax event="rowEditCancel" listener="#{pBean.onRowCancel}" update=":form:msgs" />
+        <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update=":form:msgs" />
+       <p:ajax event="rowEditCancel" listener="#{pBean.onRowCancel}" update=":form:msgs" /> 
  
        <p:column headerText="Id">
-           <p:cellEditor>
-               <f:facet name="output"><h:outputText value="#{prod.id}"/></f:facet>
-               <f:facet name="input"><p:inputText  value="#{prod.id}" style="width:100%"/></f:facet>
-           </p:cellEditor>
+           
+               <h:outputText value="#{prod.id}"/>
+           
        </p:column>
        <p:column headerText="Nome">
            <p:cellEditor>
@@ -83,8 +82,13 @@
                <f:facet name="input"><p:inputText  value="#{prod.categoria}" style="width:100%"/></f:facet>
            </p:cellEditor>
        </p:column>
+       
+      
+               
+
+         
  
-       <p:column style="width:32px">
+     <p:column style="width:32px">
            <p:rowEditor />
        </p:column> 
    </p:dataTable>

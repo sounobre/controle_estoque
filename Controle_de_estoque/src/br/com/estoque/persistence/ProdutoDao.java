@@ -46,8 +46,9 @@ public class ProdutoDao {
 	}
 	
 	public void editar(Produto produto) {
+		
 		session = HibernateUtil.getSessionFactory().openSession();
-		transaction = session.beginTransaction();
+		transaction =session.beginTransaction();
 		session.update(produto);
 		transaction.commit();
 		session.close();
