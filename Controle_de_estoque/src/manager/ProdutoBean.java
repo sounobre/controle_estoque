@@ -2,6 +2,7 @@ package manager;
 
 
 
+
 import java.util.List;
 
 
@@ -29,7 +30,10 @@ public class ProdutoBean {
 		produto = new Produto();
 	}
 	public Produto getProduto() {
+		
 		return produto;
+		
+		
 	}
 	public void setProduto(Produto produto) {
 		this.produto = produto;
