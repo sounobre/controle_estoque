@@ -47,7 +47,7 @@
 				
 				<p:growl id="msgs" showDetail="true"/>
  
-   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px" id="dtable">
+   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px" id="listaproduto">
        
  
         <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update=":form:msgs" />
