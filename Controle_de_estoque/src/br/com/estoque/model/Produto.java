@@ -3,8 +3,8 @@ package br.com.estoque.model;
 
 
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -68,6 +68,11 @@ public class Produto {
 	}
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", nome=" + nome + ", preco=" + preco + ", fornecedor=" + fornecedor
+				+ ", categoria=" + categoria + "]";
 	}
 	
 	

@@ -76,18 +76,14 @@ public class ProdutoBean {
 	
 	
 	 public void onRowEdit(RowEditEvent event) {
-		 Produto produto = ((Produto) event.getObject());
-		 new ProdutoDao().editar(produto);
-	 }
+	    	System.out.println(listaproduto);
+	        FacesMessage msg = new FacesMessage("Car Edited", ((Produto) event.getObject()).getNome());
+	        System.out.println(listaproduto);
+	        FacesContext.getCurrentInstance().addMessage(null, msg);
+	        System.out.println(listaproduto);
+	    }
 		 
 	
-
-
-		 
-		 
-	    
-	    
-	     
 	   
 		public void onRowCancel(RowEditEvent event) {
 	        FacesMessage msg = new FacesMessage("Edit Cancelled");
