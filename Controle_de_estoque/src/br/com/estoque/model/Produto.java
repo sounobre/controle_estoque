@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Entity
 public class Produto {
 	
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column
@@ -69,6 +70,10 @@ public class Produto {
 		this.categoria = categoria;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Produto [id= " + id + ", nome= " + nome + ", preco= " + preco + ", fornecedor= " + fornecedor
+				+ ", categoria= " + categoria + "]";
+	}
 
 }
