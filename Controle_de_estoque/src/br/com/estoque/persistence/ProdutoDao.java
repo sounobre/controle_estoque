@@ -1,6 +1,6 @@
 package br.com.estoque.persistence;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -30,10 +30,10 @@ public class ProdutoDao {
 	public List<Produto> listar()throws Exception {
 			session = HibernateUtil.getSessionFactory().openSession();
 			criteria = session.createCriteria(Produto.class);
-			criteria.addOrder(Order.asc("nome"));
+			
 			List<Produto> lista = criteria.list();
 			session.close();
-		
+			
 		return lista;
 	}
 	

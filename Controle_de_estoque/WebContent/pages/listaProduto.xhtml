@@ -42,14 +42,15 @@
 				<p:commandButton value="Excluir"></p:commandButton>
 				
 				-->
-				<p:separator></p:separator>
+				
 				
 				
 				<p:growl id="msgs" showDetail="true"/>
  
-   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px" id="listaproduto">
+   <p:dataTable  var="prod" value="#{pBean.listaproduto}" editable="true" style="margin-bottom:20px" id="listaproduto" >
        
  
+
         <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update="@this" />
        <p:ajax event="rowEditCancel" listener="#{pBean.onRowCancel}" update=":form:msgs" /> 
  
@@ -57,36 +58,41 @@
            
                <h:outputText value="#{prod.id}" id="modelInput"/>
            
-       </p:column>
+		</p:column>
+ 
        <p:column headerText="Nome">
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{prod.nome}"/></f:facet>
-               <f:facet name="input"><p:inputText  value="#{prod.nome}" style="width:100%"/></f:facet>
+               <f:facet name="input"><p:inputText id="idNome" value="#{prod.nome}" style="width:100%"/></f:facet>
            </p:cellEditor>
        </p:column>
        <p:column headerText="Preço">
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{prod.preco}"/></f:facet>
-               <f:facet name="input"><p:inputText  value="#{prod.preco}" style="width:100%"/></f:facet>
+               <f:facet name="input"><p:inputText id="idPreco" value="#{prod.preco}" style="width:100%"/></f:facet>
            </p:cellEditor>
        </p:column>
        <p:column headerText="Fornecedor">
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{prod.fornecedor}"/></f:facet>
-               <f:facet name="input"><p:inputText  value="#{prod.fornecedor}" style="width:100%"/></f:facet>
+               <f:facet name="input"><p:inputText id="idFornecedor" value="#{prod.fornecedor}" style="width:100%"/></f:facet>
            </p:cellEditor>
        </p:column>
        <p:column headerText="Categoria">
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{prod.categoria}"/></f:facet>
-               <f:facet name="input"><p:inputText  value="#{prod.categoria}" style="width:100%"/></f:facet>
+               <f:facet name="input"><p:inputText  id="idCategoria" value="#{prod.categoria}" style="width:100%"/></f:facet>
            </p:cellEditor>
-       </p:column>
+
+       </p:column>             
+
+         
+
  
-     <p:column style="width:32px">
+     <p:column style="width:32%">
+
            <p:rowEditor />
-           				
-          
+			<p:commandButton icon=" fa fa-trash" />
        </p:column> 
        
      
