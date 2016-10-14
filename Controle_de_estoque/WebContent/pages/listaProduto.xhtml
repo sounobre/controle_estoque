@@ -8,7 +8,21 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 	
+		<h:head>
+		<script type="text/javascript">
+
+function mostradiv(div){
+    document.getElementById(trash).style.display = 'block';
+}
+
+function ocutardiv(div){
+    document.getElementById(trash).style.display = 'none';
+}
+
+
+</script>
 		
+		</h:head>
 	
 	<ui:composition template= "template.xhtml">
 	
@@ -52,6 +66,7 @@
  
 
         <p:ajax event="rowEdit" listener="#{pBean.onRowEdit}" update="@this" />
+        <p:ajax event="rowEditInit" onstart="PF('trash').hide()" />
        <p:ajax event="rowEditCancel" listener="#{pBean.onRowCancel}" update=":form:msgs" /> 
  
        <p:column headerText="Id">
@@ -89,10 +104,17 @@
          
 
  
-     <p:column style="width:32%">
+     <p:column style="width:5%">
 
-           <p:rowEditor />
-			<p:commandButton icon=" fa fa-trash" />
+		<p:commandLink onclick="ocutardiv('trash')">
+           <p:rowEditor/> 
+        </p:commandLink>   
+           		
+           
+           
+           <p:commandLink styleClass="ui-icon ui-icon-trash" id="trash"/>
+           
+		   	
        </p:column> 
        
      

@@ -15,4 +15,11 @@ font-size: 50% !important;
 font-size: 5px !important
 }
 
+ .ui-icon-trash{
+	float: right !important;
+	margin: 0px 10px 0px 0px;
+}
 
+.ui-helper-clearfix{
+	display: inline-block !important;
+}
