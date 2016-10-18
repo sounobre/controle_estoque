@@ -1,6 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 
  <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -9,18 +7,8 @@
 	xmlns:p="http://primefaces.org/ui">
 	
 		<h:head>
-		<script type="text/javascript">
-
-function mostradiv(div){
-    document.getElementById(trash).style.display = 'block';
-}
-
-function ocutardiv(div){
-    document.getElementById(trash).style.display = 'none';
-}
-
-
-</script>
+		<script src="resources/js/js.js" ></script>
+		
 		
 		</h:head>
 	
@@ -34,28 +22,7 @@ function ocutardiv(div){
 	    
 	<h:form id="form">
 			
-		<!--  	<p:dataTable value="#{pBean.listaproduto}" var="prod">
-				<p:column headerText="Nome">
-					<h:outputText value="#{prod.nome}"/>				
-				</p:column> 
-				<p:column headerText="Preço">
-					<h:outputText value="#{prod.preco}"/>				
-				</p:column> 
-				<p:column headerText="Fornecedor">
-					<h:outputText value="#{prod.fornecedor}"/>				
-				</p:column> 
-				<p:column headerText="Categoria">
-					<h:outputText value="#{prod.categoria}"/>				
-				</p:column> 
-				<p:commandButton value="Editar"></p:commandButton>
-				<p:commandButton value="Excluir"></p:commandButton>
-
-			
-			</p:dataTable>
-			<p:commandButton value="Editar"></p:commandButton>
-				<p:commandButton value="Excluir"></p:commandButton>
-				
-				-->
+	
 				
 				
 				
@@ -106,13 +73,13 @@ function ocutardiv(div){
  
      <p:column style="width:5%">
 
-		<p:commandLink onclick="ocutardiv('trash')">
-           <p:rowEditor/> 
-        </p:commandLink>   
+		
+           <p:rowEditor id="hide" /> 
+        
            		
            
            
-           <p:commandLink styleClass="ui-icon ui-icon-trash" id="trash"/>
+           <p:commandLink styleClass="ui-icon ui-icon-trash" id="teste"/>
            
 		   	
        </p:column> 
@@ -125,8 +92,13 @@ function ocutardiv(div){
 		
 			</h:form>
 	    
-	    
-	    
+	<!--      <p:commandButton value="Ocultar" id="hide" /> 
+	
+	<p:commandButton value="Mostrar" id="show" /> -->
+	
+	<p:commandButton value="Teste" id="teste1" /> 
+	
+	
 	</ui:define>
 	
 </ui:composition>
