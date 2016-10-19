@@ -7,7 +7,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 	
+		<head>
 		
+		</head>
 	
 	<ui:composition template= "template.xhtml">
 	
@@ -17,8 +19,10 @@
 	
 	<ui:define name="conteudo">
 	    
+	  
 
-				
+		<p:dialog header="Basic Dialog" id="dlg1" widgetVar="dlg1" width="500" height="500"
+   resizable="false" minimizable="true" maximizable="true" visible="true" >		
 			<h:form id="formproduto">
 				<h:panelGrid columns="2" >
 					<h:outputText  value="Nome: " />
@@ -38,7 +42,7 @@
 				<p:messages />
 			</h:form>
 		
-	    
+	    </p:dialog>
 	    
 	    
 	</ui:define>
